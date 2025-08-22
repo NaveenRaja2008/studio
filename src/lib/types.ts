@@ -14,4 +14,5 @@ export interface Order {
   status: 'Processing' | 'Shipped' | 'Delivered' | 'Cancelled';
   total: number;
   itemCount: number;
+  items: Book[];
 }

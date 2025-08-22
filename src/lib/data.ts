@@ -114,7 +114,7 @@ export const allBooks: Book[] = [
 export const purchasedBooks: Book[] = allBooks.slice(0, 4);
 
 export const orders: Order[] = [
-    { id: 'LH-84353', date: '2023-10-26', status: 'Delivered', total: 24.98, itemCount: 2 },
-    { id: 'LH-84199', date: '2023-11-15', status: 'Shipped', total: 43.50, itemCount: 3 },
-    { id: 'LH-84125', date: '2023-11-28', status: 'Processing', total: 12.99, itemCount: 1 },
+    { id: 'LH-84353', date: '2023-10-26', status: 'Delivered', total: 24.98, itemCount: 2, items: allBooks.slice(2, 4) },
+    { id: 'LH-84199', date: '2023-11-15', status: 'Shipped', total: 43.50, itemCount: 3, items: allBooks.slice(4, 7) },
+    { id: 'LH-84125', date: '2023-11-28', status: 'Processing', total: 12.99, itemCount: 1, items: allBooks.slice(8, 9) },
 ];
