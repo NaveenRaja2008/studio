@@ -6,6 +6,7 @@ export interface Book {
   coverImage: string;
   category: 'New Arrival' | 'Fiction' | 'Children' | 'Self Development';
   'data-ai-hint'?: string;
+  isFavorite?: boolean;
 }
 
 export interface Order {

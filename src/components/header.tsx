@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { BookMarked, User, ShoppingCart, Menu, X, LogIn, UserPlus, BookCopy, Package, LogOut } from 'lucide-react';
+import { BookMarked, User, ShoppingCart, Menu, X, LogIn, UserPlus, BookCopy, Package, LogOut, Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator } from '@/components/ui/dropdown-menu';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
@@ -27,6 +27,11 @@ export function Header() {
 
   const userMenuItems = isLoggedIn ? (
     <>
+       <DropdownMenuItem asChild>
+        <Link href="/favorites" className="flex items-center cursor-pointer">
+          <Heart className="mr-2 h-4 w-4" /> My Favorites
+        </Link>
+      </DropdownMenuItem>
       <DropdownMenuItem asChild>
         <Link href="/my-books" className="flex items-center cursor-pointer">
           <BookCopy className="mr-2 h-4 w-4" /> My Books
@@ -52,6 +57,12 @@ export function Header() {
       <DropdownMenuItem asChild>
         <Link href="/signup" className="flex items-center cursor-pointer">
           <UserPlus className="mr-2 h-4 w-4" /> Sign Up
+        </Link>
+      </DropdownMenuItem>
+       <DropdownMenuSeparator />
+       <DropdownMenuItem asChild>
+        <Link href="/favorites" className="flex items-center cursor-pointer">
+          <Heart className="mr-2 h-4 w-4" /> My Favorites
         </Link>
       </DropdownMenuItem>
       <DropdownMenuSeparator />
