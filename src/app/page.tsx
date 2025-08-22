@@ -17,7 +17,7 @@ export default function Home() {
       <main className="flex-grow">
         <section className="relative w-full py-20 md:py-32 lg:py-40 bg-card">
            <Image 
-            src="https://placehold.co/1920x1080.png" 
+            src="https://images.unsplash.com/photo-1532012197267-da84d127e765?q=80&w=1974&auto=format&fit=crop"
             alt="Library background"
             data-ai-hint="library background"
             layout="fill"
