@@ -109,6 +109,42 @@ export const allBooks: Book[] = [
     category: "Fiction",
     "data-ai-hint": "greek mythology"
   },
+  {
+    id: 13,
+    title: "The Four Winds",
+    author: "Kristin Hannah",
+    price: 18.99,
+    coverImage: "https://images.unsplash.com/photo-1621827911089-417a8c015757?q=80&w=1974&auto=format&fit=crop",
+    category: "New Arrival",
+    "data-ai-hint": "dust bowl"
+  },
+  {
+    id: 14,
+    title: "The Song of Achilles",
+    author: "Madeline Miller",
+    price: 12.99,
+    coverImage: "https://images.unsplash.com/photo-1586262243497-534a78c36a46?q=80&w=1974&auto=format&fit=crop",
+    category: "Fiction",
+    "data-ai-hint": "greek warrior"
+  },
+  {
+    id: 15,
+    title: "Brown Bear, Brown Bear, What Do You See?",
+    author: "Bill Martin Jr. & Eric Carle",
+    price: 7.99,
+    coverImage: "https://images.unsplash.com/photo-1549499232-438459131338?q=80&w=1974&auto=format&fit=crop",
+    category: "Children",
+    "data-ai-hint": "brown bear"
+  },
+  {
+    id: 16,
+    title: "Dare to Lead",
+    author: "Brené Brown",
+    price: 21.00,
+    coverImage: "https://images.unsplash.com/photo-1598492020235-6853a4e9a3b2?q=80&w=1974&auto=format&fit=crop",
+    category: "Self Development",
+    "data-ai-hint": "leadership book"
+  }
 ];
 
 export const purchasedBooks: Book[] = allBooks.slice(0, 4);
