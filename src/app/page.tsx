@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Header } from '@/components/header';
@@ -32,7 +33,7 @@ export default function Home() {
               Your personal sanctuary for discovering and purchasing the books you'll love.
             </p>
             <div className="mt-8 flex justify-center">
-              <Link href="#new-arrivals">
+              <Link href="/explore">
                 <Button size="lg" className="font-headline">
                   Explore Books
                 </Button>
@@ -42,7 +43,7 @@ export default function Home() {
         </section>
 
         {categories.map((category) => {
-          const books = allBooks.filter((book) => book.category === category);
+          const books = allBooks.filter((book) => book.category === category).slice(0, 5);
           if (books.length === 0) return null;
 
           return (

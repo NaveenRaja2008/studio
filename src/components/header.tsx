@@ -1,16 +1,19 @@
+
 "use client";
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { BookMarked, User, ShoppingCart, Menu, X, LogIn, UserPlus, BookCopy, Package, LogOut, Heart } from 'lucide-react';
+import { BookMarked, User, ShoppingCart, Menu, X, LogIn, UserPlus, BookCopy, Package, LogOut, Heart, Search } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator } from '@/components/ui/dropdown-menu';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
+import { usePathname } from 'next/navigation';
 
 export function Header() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     setIsMounted(true);
@@ -19,10 +22,11 @@ export function Header() {
   const handleLoginToggle = () => setIsLoggedIn(!isLoggedIn);
 
   const navLinks = [
-    { href: '#new-arrival', label: 'New Arrival' },
-    { href: '#fiction', label: 'Fiction' },
-    { href: '#children', label: 'Children' },
-    { href: '#self-development', label: 'Self Development' },
+    { href: '/explore', label: 'Explore' },
+    { href: '/#new-arrival', label: 'New Arrival' },
+    { href: '/#fiction', label: 'Fiction' },
+    { href: '/#children', label: 'Children' },
+    { href: '/#self-development', label: 'Self Development' },
   ];
 
   const userMenuItems = isLoggedIn ? (
@@ -85,7 +89,14 @@ export function Header() {
         </Link>
         <nav className="hidden md:flex gap-6 items-center">
           {navLinks.map(link => (
-            <Link key={link.href} href={link.href} className="text-sm font-medium hover:text-primary transition-colors">
+            <Link 
+              key={link.href} 
+              href={link.href} 
+              className={cn(
+                "text-sm font-medium transition-colors",
+                pathname === link.href ? "text-primary" : "hover:text-primary"
+              )}
+            >
               {link.label}
             </Link>
           ))}

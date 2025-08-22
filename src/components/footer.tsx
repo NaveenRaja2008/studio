@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import { BookMarked } from 'lucide-react';
 
@@ -25,6 +26,7 @@ export function Footer() {
             <h3 className="font-headline font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li><Link href="/" className="text-sm hover:text-primary">Home</Link></li>
+              <li><Link href="/explore" className="text-sm hover:text-primary">Explore</Link></li>
               <li><Link href="/favorites" className="text-sm hover:text-primary">My Favorites</Link></li>
               <li><Link href="/my-books" className="text-sm hover:text-primary">My Books</Link></li>
               <li><Link href="/orders" className="text-sm hover:text-primary">Orders</Link></li>
@@ -33,10 +35,10 @@ export function Footer() {
           <div>
             <h3 className="font-headline font-semibold mb-4">Categories</h3>
             <ul className="space-y-2">
-              <li><Link href="#new-arrival" className="text-sm hover:text-primary">New Arrival</Link></li>
-              <li><Link href="#fiction" className="text-sm hover:text-primary">Fiction</Link></li>
-              <li><Link href="#children" className="text-sm hover:text-primary">Children</Link></li>
-              <li><Link href="#self-development" className="text-sm hover:text-primary">Self Development</Link></li>
+              <li><Link href="/#new-arrival" className="text-sm hover:text-primary">New Arrival</Link></li>
+              <li><Link href="/#fiction" className="text-sm hover:text-primary">Fiction</Link></li>
+              <li><Link href="/#children" className="text-sm hover:text-primary">Children</Link></li>
+              <li><Link href="/#self-development" className="text-sm hover:text-primary">Self Development</Link></li>
             </ul>
           </div>
           <div>
