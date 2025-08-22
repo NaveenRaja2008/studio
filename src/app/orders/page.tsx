@@ -51,6 +51,7 @@ export default function OrdersPage() {
         setOrders(parsedOrders);
       } catch (error) {
         console.error("Failed to parse orders from localStorage", error);
+        // If parsing fails, set to empty array or some default state
         setOrders([]);
       }
     }
@@ -86,36 +87,37 @@ export default function OrdersPage() {
                           <TableHead>Status</TableHead>
                           <TableHead className="text-right">Total</TableHead>
                           <TableHead className="text-right sr-only md:not-sr-only">Items</TableHead>
-                          <TableHead className="w-[50px]"></TableHead>
+                          <TableHead className="w-[50px] text-right"> </TableHead>
                           </TableRow>
                       </TableHeader>
                       <TableBody>
                         {orders.map((order) => (
                           <AccordionItem value={`order-${order.id}`} key={order.id} asChild>
-                            <>
-                              <TableRow>
-                                  <TableCell className="font-medium">{order.id}</TableCell>
-                                  <TableCell>{new Date(order.date).toLocaleDateString()}</TableCell>
-                                  <TableCell>
-                                    <StatusBadge status={order.status} />
-                                  </TableCell>
-                                  <TableCell className="text-right">${order.total.toFixed(2)}</TableCell>
-                                  <TableCell className="text-right sr-only md:not-sr-only">{order.itemCount}</TableCell>
-                                  <TableCell className="text-right">
-                                    <AccordionTrigger>
-                                      <span className="sr-only">View Details</span>
-                                    </AccordionTrigger>
-                                  </TableCell>
-                              </TableRow>
-                              <TableRow>
-                                <TableCell colSpan={6} className="p-0">
+                             <TableRow>
+                                <TableCell className="font-medium" colSpan={6}>
+                                  <div className="flex items-center w-full">
+                                    <div className="grid grid-cols-6 w-full items-center">
+                                      <div className="font-medium col-span-1">{order.id}</div>
+                                      <div className="col-span-1">{new Date(order.date).toLocaleDateString()}</div>
+                                      <div className="col-span-1">
+                                        <StatusBadge status={order.status} />
+                                      </div>
+                                      <div className="text-right col-span-1">${order.total.toFixed(2)}</div>
+                                      <div className="text-right sr-only md:not-sr-only col-span-1">{order.itemCount}</div>
+                                      <div className="text-right col-span-1">
+                                          <AccordionTrigger>
+                                            <span className="sr-only">View Details</span>
+                                          </AccordionTrigger>
+                                      </div>
+                                    </div>
+                                  </div>
                                   <AccordionContent>
-                                    <div className="p-6 bg-muted/50">
+                                    <div className="p-6 bg-muted/50 mt-4">
                                       <h4 className="font-medium mb-4">Order Items</h4>
                                       <div className="grid gap-4">
                                         {order.items.map(item => (
                                           <div key={item.id} className="flex items-center gap-4">
-                                            <Image src={item.coverImage} alt={item.title} width={60} height={90} className="rounded-md" />
+                                            <Image src={item.coverImage} alt={item.title} width={60} height={90} className="rounded-md" data-ai-hint={item['data-ai-hint']}/>
                                             <div className="flex-grow">
                                               <p className="font-medium">{item.title}</p>
                                               <p className="text-sm text-muted-foreground">{item.author}</p>
@@ -128,7 +130,6 @@ export default function OrdersPage() {
                                   </AccordionContent>
                                 </TableCell>
                               </TableRow>
-                             </>
                           </AccordionItem>
                         ))}
                       </TableBody>
