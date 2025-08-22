@@ -144,6 +144,42 @@ export const allBooks: Book[] = [
     coverImage: "https://images.unsplash.com/photo-1598492020235-6853a4e9a3b2?q=80&w=1974&auto=format&fit=crop",
     category: "Self Development",
     "data-ai-hint": "leadership book"
+  },
+  {
+    id: 17,
+    title: "The Girl with the Dragon Tattoo",
+    author: "Stieg Larsson",
+    price: 11.99,
+    coverImage: "https://images.unsplash.com/photo-1517047132497-63e5a7b97368?q=80&w=1974&auto=format&fit=crop",
+    category: "Fiction",
+    "data-ai-hint": "mystery thriller"
+  },
+  {
+    id: 18,
+    title: "Corduroy",
+    author: "Don Freeman",
+    price: 6.99,
+    coverImage: "https://images.unsplash.com/photo-1542883339-f87140487c6f?q=80&w=1974&auto=format&fit=crop",
+    category: "Children",
+    "data-ai-hint": "teddy bear"
+  },
+  {
+    id: 19,
+    title: "Sapiens: A Brief History of Humankind",
+    author: "Yuval Noah Harari",
+    price: 22.00,
+    coverImage: "https://images.unsplash.com/photo-1569771933868-de35a9a4e21a?q=80&w=1974&auto=format&fit=crop",
+    category: "Self Development",
+    "data-ai-hint": "human history"
+  },
+  {
+    id: 20,
+    title: "The Vanishing Half",
+    author: "Brit Bennett",
+    price: 16.20,
+    coverImage: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=1974&auto=format&fit=crop",
+    category: "New Arrival",
+    "data-ai-hint": "family saga"
   }
 ];
 
